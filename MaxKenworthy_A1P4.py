@@ -1,8 +1,7 @@
-## Max Kenworthy
-## 9/24/18
-## honor statement "I have not given or received unauthorized assistance on this assignment"
-
-# P4
+'''
+Exercise: Write a function that creates a game in which given a sample word the user can 
+replace letters one at a time to form the target word in as few turns as possible.
+'''
 
 def game():
     name = input('Please enter name: ')
@@ -31,9 +30,6 @@ def game():
         else:
             print('Invalid option. Choose a, b, or c.')
     print("Congratulations "+name+"! It only took you "+str(step)+" steps")  #print statement when goal word reached
-
-game()  #initiate game function
-
 
 
 #sample run:
