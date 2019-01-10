@@ -1,9 +1,9 @@
-## Max Kenworthy
-## 9/24/18
-## honor statement "I have not given or received unauthorized assistance on this assignment"
+'''
+Exercise: Write functions that take a positive integer as input and returns true if input is prime
+and/or a happy prime.  Additional functions create list of first 100 happy and non-happy primes.
+'''
 
-# P3 a)
-
+#evaluate input as prime or non-prime
 def prime(x):
     # check if input is valid
     if type(x) != int or x < 0:
@@ -15,8 +15,7 @@ def prime(x):
     else:
         return True
 
-#P3 b)
-
+#evalute input as happy or non-happy number
 def happy(x):
     lst = []
     #check for invalid input
@@ -38,16 +37,15 @@ def happy(x):
                 lst.append(a)
                 x=a
 
-# P3 c)
 
+#evaluate input as happy or non-happy prime
 def happy_prime(x):
     if prime(x)==True and happy(x)==True:
         return True
     else:
         return False
 
-# P3 d)
-
+#create and print list of first 100 happy primes
 def hp100():
     lst=[]
     x=0
@@ -57,8 +55,7 @@ def hp100():
             lst.append(x)
     print(lst)
 
-# P3 e)
-
+#create and print list of first 100 non-happy primes
 def sad100():
     lst=[]
     x=0
