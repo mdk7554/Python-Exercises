@@ -1,7 +1,6 @@
 '''
-Max Kenworthy
-
-Honor statement: “I have not given or received any unauthorized assistance on this assignment.”
+Exercise: Create program that emulates a game of dice that incorporates betting and multiple turns. Include a functional
+account balance that is updated with appropriate winnings/losses.
 '''
 
 import random

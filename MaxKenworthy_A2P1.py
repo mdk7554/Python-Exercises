@@ -1,9 +1,7 @@
 """
-Created on Thu Oct  4 15:35:09 2018
-
-Max Kenworthy
-
-Honor statement: “I have not given or received any unauthorized assistance on this assignment.”
+Exercise: Given a flat text file containing names of boys and girls, create a function that records the number of times each name
+ends in a certain letter of the alphabet. Executing the function produces a 26x2 dataframe where each letter of the alphabet has a
+row and a column for each boy and girl names.
 """
 
 import pandas as pd
@@ -11,8 +9,8 @@ import pandas as pd
 def print_last_char():
 
     #open and read in text file to lists
-    gfile = open("/Users/maxkenworthy/Desktop/Datasets/namesGirls.txt",'r')
-    bfile = open("/Users/maxkenworthy/Desktop/Datasets/namesBoys.txt",'r')
+    gfile = open(".../namesGirls.txt",'r')
+    bfile = open(".../namesBoys.txt",'r')
     
         
     girls = gfile.read().split('\r\n')
@@ -61,5 +59,3 @@ def print_last_char():
     df.columns=['Girls','Boys']
         
     return df
-
-print_last_char()
