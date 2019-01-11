@@ -1,15 +1,16 @@
 '''
-Max Kenworthy
-
-Honor statement: “I have not given or received any unauthorized assistance on this assignment.”
+Exercise: Calculate descriptive statistics for attribute "Total Volume" of Avocado dataset WITHOUT storing data into memory.
+Only read in one value at a time.
 '''
 
 import numpy as np
 import pandas as pd
 import statistics as st
+import csv
 
+#read and store data in memory then calculate mean, standard deviation, and median using statistics library
 def read_in(var):
-    col = pd.read_csv("/Users/maxkenworthy/Desktop/Datasets/avocado.csv",usecols=[var])
+    col = pd.read_csv(".../avocado.csv",usecols=[var])
     return col[var]
 
 def readcomp_mean_sm(var):
@@ -28,6 +29,7 @@ def readcomp_med_sm(var):
 
 print(readcomp_mean_sm('Total Volume'),readcomp_stdv_sm('Total Volume'),readcomp_med_sm('Total Volume'))
 
+#formulate descriptive statistics with homegrown/original algorithm (i.e. not using third-party library)
 def mean_hg(var):
     col = read_in(var)
     return sum(col)/len(col)
@@ -51,27 +53,16 @@ def median_hg(var):
 
 print(mean_hg('Total Volume'),std_hg('Total Volume'),median_hg('Total Volume'))
 
+#calculate descriptive statistics by only storing one value in memory at a time
 
-
+#function to read in single value given the variable and index
 def read_1val(var,r_idx):
     c = pd.read_csv("/Users/maxkenworthy/Desktop/Datasets/avocado.csv",nrows=1,index_col=0)
     c_idx = c.columns.get_loc(var)
     val=pd.read_csv("/Users/maxkenworthy/Desktop/Datasets/avocado.csv",usecols=[c_idx+1],nrows=1,skiprows=r_idx)
     return val.iloc[0][0]
 
-import csv
-
-def read_1val2(var,r_idx):
-    with open("/Users/maxkenworthy/Desktop/Datasets/avocado.csv") as f:
-        reader=csv.reader(f)
-        for line in reader:
-            var_idx = line.index(var)
-            break
-        return float([row for idx, row in enumerate(reader) if idx == r_idx][0][var_idx])
-
-
-read_1val2('Total Volume',3)
-
+#find index of minimum and maximum values
 def min_max_totaln(var):
     max_v,v,i = 0,0,0
     min_v = read_1val(var,i)
@@ -89,6 +80,7 @@ def min_max_totaln(var):
 min_v, max_v, n_v = min_max_totaln('Total Volume')
 print(min_v,max_v,n_v)
 
+#calculate mean
 def mean_mml(var,n):
     totsum=0
     for i in range(n):
@@ -98,6 +90,7 @@ def mean_mml(var,n):
 mean_v = mean_mml("Total Volume",n_v)
 print(mean_v)
 
+#standard deviation
 def sd_mml(var,n):
     mean2=0
     for i in range(n):

@@ -1,16 +1,13 @@
 
 """
-Created on Thu Oct  4 18:17:00 2018
-
-Max Kenworthy
-
-Honor statement: “I have not given or received any unauthorized assistance on this assignment.”
+Exercise: Create program that reads in a certain file (determined by user input) containing random numbers then displays
+all numbers as stem-and-leaf plot.
 """
 
 #read in files
-file1 = open("/Users/maxkenworthy/Desktop/Datasets/StemAndLeaf1.txt",'r')
-file2 = open("/Users/maxkenworthy/Desktop/Datasets/StemAndLeaf2.txt",'r')
-file3 = open("/Users/maxkenworthy/Desktop/Datasets/StemAndLeaf3.txt",'r')
+file1 = open(".../StemAndLeaf1.txt",'r')
+file2 = open(".../StemAndLeaf2.txt",'r')
+file3 = open(".../StemAndLeaf3.txt",'r')
     
         
 sal1 = file1.read().split('\n')
